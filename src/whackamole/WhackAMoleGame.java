@@ -17,13 +17,39 @@ public class WhackAMoleGame {
 
     // Constructor
     // method to create a new instance of class
-    WhackAMoleGame (int score, int gridDimension){
-        this.score = score;
+    WhackAMoleGame (int attemptsLeft, int gridDimension){
+        this.score = 0;
             // TODO fix variables of molesLeft & attemptsLeft.
         this.molesLeft = 3;
         this.attemptsLeft = 2;
         this.molGrid = new char[gridDimension][gridDimension];
+
     }
+
+    // TODO implement boolean place(int x, int y);
+    // getter & setter functions
+    public boolean place(int x, int y){
+            // check if slot is empty
+         if (this.molGrid[x][y] == 0){
+             // code for empty slot
+             //place mole at x,
+             this.molGrid[x][y] = 'M';
+             System.out.println("its empty and mole placed here");
+             //update num of moles left
+             this.molesLeft++;
+             System.out.println("Now there are a total of " +
+                     this.molesLeft + " left.");
+             return true;
+
+                }else{
+                    //code for not empty slot
+                    System.out.println("this slot is NOT empty. - no moles placed");
+                    System.out.println("There is a mole here!");
+                    return false;
+                }
+    }
+
+
 
     public static void main(String[] args){
         // only ask user input in the main method
@@ -57,6 +83,7 @@ public class WhackAMoleGame {
 
 
         wais.molGrid[0][0] = 'e';
+        wais.place(2,3);
         // print the 2D array
         for (char[] a : wais.molGrid){
             for (char i : a){
