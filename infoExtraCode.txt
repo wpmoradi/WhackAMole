@@ -12,3 +12,14 @@
          * rows by: moleGrid.length
          * columns by: moleGrid[0].length
          */
+
+          //       // using for loop - input 'M' in each slot of the 2D array
+         //        for (char index = 0; index < wais.molGrid.length; index++){
+         //            for (char iB = 0; iB<wais.molGrid[0].length; iB++){
+         //                wais.molGrid[index][iB] = '*';
+         //            }
+         //        }
+
+
+         Generating random numbers
+         https://www.mkyong.com/java/java-generate-random-integers-in-a-range/

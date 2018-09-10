@@ -108,22 +108,10 @@ public class WhackAMoleGame {
         WhackAMoleGame wais;
         wais = new WhackAMoleGame(50,10);
 
-
-
         System.out.println("Congrats your score is: "+ wais.score+".");
         System.out.println("You have to whack "+wais.molesLeft+" more moles.");
         System.out.println("You have "+wais.attemptsLeft+" attempts left.");
-
         System.out.println("\n"); //create line space
-
-
-        // print the 2D array with empty slots
-        for (char[] a : wais.molGrid){
-            for (char i : a){
-                System.out.print(i + "\t");
-            }
-            System.out.println("\n");
-        }
 
         wais.printGrid();
 
@@ -137,15 +125,6 @@ public class WhackAMoleGame {
          * rows by: moleGrid.length
          * columns by: moleGrid[0].length
          */
-
- //       // using for loop - input 'M' in each slot of the 2D array
-//        for (char index = 0; index < wais.molGrid.length; index++){
-//            for (char iB = 0; iB<wais.molGrid[0].length; iB++){
-//                wais.molGrid[index][iB] = '*';
-//            }
-//        }
-
-
 
     }
 
