@@ -1,0 +1,14 @@
+        // print the 2D array with empty slots
+        for (char[] a : wais.molGrid){
+            for (char i : a){
+                System.out.print(i + "\t");
+            }
+            System.out.println("\n");
+        }
+
+
+        /***
+         * Can find array dimensions via .:
+         * rows by: moleGrid.length
+         * columns by: moleGrid[0].length
+         */

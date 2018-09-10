@@ -31,7 +31,7 @@ public class WhackAMoleGame {
     // getter & setter functions
     public boolean place(int x, int y){
             // check if slot is empty
-         if (this.molGrid[x][y] == 0){
+         if (this.molGrid[x][y] != 'M'){
              // code for empty slot
              //place mole at x,
              this.molGrid[x][y] = 'M';
@@ -76,6 +76,13 @@ public class WhackAMoleGame {
 
     //TODO print GRID method
     public void printGrid(){
+               // using for loop - input '*' in each slot of the 2D array
+        for (char index = 0; index < this.molGrid.length; index++){
+            for (char iB = 0; iB < this.molGrid[0].length; iB++){
+                this.molGrid[index][iB] = '*';
+            }
+        }
+
         for (int i =0; i < 10; i++){
             int x = new Random().nextInt(10);
             int y = new Random().nextInt(10);
@@ -84,7 +91,7 @@ public class WhackAMoleGame {
             this.place(x,y);
         }
 
-                // print the 2D array
+                // print entire GRID out 2D array
         for (char[] a : this.molGrid){
             for (char i : a){
                 System.out.print(i + "\t");
@@ -99,7 +106,9 @@ public class WhackAMoleGame {
 
         // below is an examples
         WhackAMoleGame wais;
-        wais = new WhackAMoleGame(15,10);
+        wais = new WhackAMoleGame(50,10);
+
+
 
         System.out.println("Congrats your score is: "+ wais.score+".");
         System.out.println("You have to whack "+wais.molesLeft+" more moles.");
@@ -108,7 +117,7 @@ public class WhackAMoleGame {
         System.out.println("\n"); //create line space
 
 
-        // print the 2D array
+        // print the 2D array with empty slots
         for (char[] a : wais.molGrid){
             for (char i : a){
                 System.out.print(i + "\t");
