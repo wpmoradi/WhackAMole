@@ -3,6 +3,7 @@ package whackamole;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Random;
 
 public class WhackAMoleGame {
     // instance variable fields
@@ -29,9 +30,6 @@ public class WhackAMoleGame {
     // TODO implement boolean place(int x, int y);
     // getter & setter functions
     public boolean place(int x, int y){
-        // adjust for 0 indexing
-        x--;
-        y--;
             // check if slot is empty
          if (this.molGrid[x][y] == 0){
              // code for empty slot
@@ -76,7 +74,25 @@ public class WhackAMoleGame {
 
     }
 
+    //TODO print GRID method
+    public void printGrid(){
+        for (int i =0; i < 10; i++){
+            int x = new Random().nextInt(10);
+            int y = new Random().nextInt(10);
+            System.out.println("Random coordinates are : " +
+                    x + "," + y + ".");
+            this.place(x,y);
+        }
 
+                // print the 2D array
+        for (char[] a : this.molGrid){
+            for (char i : a){
+                System.out.print(i + "\t");
+            }
+            System.out.println("\n");
+        }
+
+    }
 
     public static void main(String[] args){
         // only ask user input in the main method
@@ -92,10 +108,6 @@ public class WhackAMoleGame {
         System.out.println("\n"); //create line space
 
 
-        wais.place(4,6);
-        wais.place(10,10);
-        wais.place(1,5);
-
         // print the 2D array
         for (char[] a : wais.molGrid){
             for (char i : a){
@@ -104,9 +116,12 @@ public class WhackAMoleGame {
             System.out.println("\n");
         }
 
+        wais.printGrid();
+
         // attempt to whack moles
         wais.whack(2,2);
         wais.whack(10,10);
+
 
         /***
          * Can find array dimensions via .:
@@ -114,7 +129,7 @@ public class WhackAMoleGame {
          * columns by: moleGrid[0].length
          */
 
-        // using for loop - input 'M' in each slot of the 2D array
+ //       // using for loop - input 'M' in each slot of the 2D array
 //        for (char index = 0; index < wais.molGrid.length; index++){
 //            for (char iB = 0; iB<wais.molGrid[0].length; iB++){
 //                wais.molGrid[index][iB] = '*';
@@ -122,13 +137,6 @@ public class WhackAMoleGame {
 //        }
 
 
-        // print the 2D array
-        for (char[] a : wais.molGrid){
-            for (char i : a){
-                System.out.print(i + "\t");
-            }
-            System.out.println("\n");
-        }
 
     }
 
